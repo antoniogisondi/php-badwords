@@ -1,9 +1,10 @@
 <?php 
-    $paragraph = strtolower($_POST['paragraph']);
-    $word = strtolower($_POST['word']);
+    $word = $_GET['word'];
+    $paragraph = $_GET['paragraph'];
+    $paragraph_lenght = strlen($paragraph);
 
-    $expolde = explode(" ", $word);
-    $text_final = str_replace($expolde, '***' , $paragraph)
+    $text_final = str_replace($word, '***' , $paragraph);
+    $censored = strlen($text_final)
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +16,18 @@
     <title>PHP Badwords</title>
 </head>
     <body>
-        <div class="conatiner">
-            <div class="row d-flex justify-content-center">
-                <div class="col-8">
-                    <input type="text" name="word" readonly value="<?php echo $word ?>">
-                    <textarea cols="50" rows="10"><?php echo $text_final ?></textarea>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                   <h4>Paragrafo</h4>
+                   <p><?php echo $paragraph ?></p>
+                   <h4>Bad Word</h4>
+                   <p><?php echo $word ?></p>
+                   <p><strong>Lunghezza paragrafo: </strong><?php echo $paragraph_lenght ?></p>
+                   <hr>
+                   <h4>Paragrafo censurato</h4>
+                   <p><?php echo $text_final ?></p>
+                   <p><strong>Lunghezza paragrafo censurato: </strong><?php echo $censored ?></p>
                 </div>
             </div>
         </div>

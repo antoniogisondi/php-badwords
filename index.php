@@ -1,8 +1,3 @@
-<?php 
-// inserisci codice
-$text = 'Inserisci la parola da censurare'
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +10,7 @@ $text = 'Inserisci la parola da censurare'
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
-                    <form action="principal.php" method="POST" class="d-flex flex-column">
-                        <h4><?php echo $text ?></h4>
+                    <form action="principal.php" method="GET" class="d-flex flex-column">
                         <input class="mb-2 mt-5" type="text" name="word">
                         <textarea class="mt-5" name="paragraph" cols="50" rows="10"></textarea>
                         <button class="btn btn-primary w-25 position-relative top-50 start-50 translate-middle mt-4">Send</button>
